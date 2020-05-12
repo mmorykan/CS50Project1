@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Welcome to the Book Review website!
+{% endblock %}
+
+{% block body %}
+    <!-- Insert some book pictures -->
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <a class="btn btn-info" href="{{ url_for('login') }}" role="button">Login!</a> 
+            </div> 
+            <div class="column">
+                <a class="btn btn-info" href="{{ url_for('register') }}" role="button">Register!</a>
+            <div>
+        </div>
+    </div>
