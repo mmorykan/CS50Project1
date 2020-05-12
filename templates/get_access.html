@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+   {% block title %}
+   {% endblock title %}
+{% endblock heading %}
+
+{% block body %}
+    {% block form %}
+    {% endblock form %}
+        <div class="form-group">
+            Enter username: <input id="login" class="form-control" name="name" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+            Enter password: <input id="login" class="form-control" name="password" type="password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Start Reviewing!</button>
+        </div>
+    </form>
+    <div style="text-align: center">
+        <img class="login" src="{{ url_for('static', filename='book_pic1.jpg') }}">
+    </div>
+{% endblock body %}

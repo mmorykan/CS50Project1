@@ -1,0 +1,55 @@
+.heading {
+    text-align: center;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+#login {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#front {
+    color: dodgerblue;
+}
+
+h1, h3 {
+    font-weight: bold;
+}
+
+.background {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+%images {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.front {
+    @extend %images;
+    height: 300px;
+    width: 250px;
+}
+
+.login {
+    @extend %images;
+    height: 300px;
+    width: 500px;
+}
+
+.intro_button {
+    background-color: teal;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+    width: 250px;
+}

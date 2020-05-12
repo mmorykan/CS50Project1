@@ -1,6 +1,6 @@
 import os
-
-from flask import Flask, session, render_template
+import requests
+from flask import Flask, session, render_template, request
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -22,22 +22,65 @@ db = scoped_session(sessionmaker(bind=engine))
 
 
 @app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
 
 @app.route('/login')
-def login(username, password):
-    pass
+def login():
+    return render_template('login.html')
 
 
 @app.route('/register')
-def register(username, password):
-    pass
+def register():
+    return render_template('register.html')
+
+
+# @app.route('/success')
+# def success():
+#     return render_template('success.html')
+
+
+# @app.route('/error')
+# def error():
+#     return render_template('error.html')
+
+
+@app.route('/register_account', methods=['POST'])
+def register_account():
+    username = request.form.get('name')
+    password = request.form.get('password')
+
+    if username and password:
+        user = db.execute('SELECT * FROM users WHERE username = :username', {'username': username}).fetchone()
+        if user:
+            return render_template('error.html', message='Username already exists!')
+
+        db.execute('INSERT INTO users (username, password) VALUES (:username, :password)', {'username': username, 'password': password})
+        db.commit()
+        return render_template('success.html')
+
+    else:
+        return render_template('error.html', message='Enter a username and password.')
+
+
+@app.route('/login_account', methods=['POST'])
+def login_account():
+    username = request.form.get('name')
+    password = request.form.get('password')
+
+    if username and password:
+        user = db.execute('SELECT * FROM users WHERE username = :username AND password = :password', {'username': username, 'password': password}).fetchone()
+        if user:
+            return render_template('success.html', username=username)
+        return render_template('error.html', message='username or password is incorrect.')
+    else:
+        return render_template('error.html', message='Enter a username and password.')
 
 
 @app.route('/search')
-def search(info):
-    pass
+def search():
+    return render_template('search.html')
 
 

@@ -1,18 +1,34 @@
 {% extends "layout.html" %}
 
 {% block heading %}
-    Welcome to the Book Review website!
+    <div id="front">Welcome to the Book Review Website!<div>
 {% endblock %}
 
 {% block body %}
-    <!-- Insert some book pictures -->
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <a class="btn btn-info" href="{{ url_for('login') }}" role="button">Login!</a> 
-            </div> 
-            <div class="column">
-                <a class="btn btn-info" href="{{ url_for('register') }}" role="button">Register!</a>
-            <div>
-        </div>
+<body class="background">
+    <div id="front">
+        <h3>About</h3>
+    
+        This website is used for researching books and reading the reviews posted about them.
+        After logging in you can:
+        <ul>
+            <li>Search for books</li>
+            <li>Leave reviews on books</li>
+            <li>Read already posted reviews on books</li>
+        </ul>
     </div>
+    
+    <div style="text-align: center">
+        <img class="front" src="{{ url_for('static', filename='book_quote1.jpg') }}">
+        <img class="front" src="{{ url_for('static', filename='book_quote2.jpg') }}">
+    </div>
+    <div style="text-align: center">
+        <a href="{{ url_for('login') }}">
+            <button class="intro_button">Login!</button>
+        </a>
+        <a href="{{ url_for('register') }}" >
+            <button class="intro_button">Register!</button>
+        </a>
+    </div>
+</body>
+{% endblock %}

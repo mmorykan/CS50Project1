@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    <div style="color: green">Success!</div>
+{% endblock %}
+
+{% block body %}
+    <h3>
+        Hello {{ username }}!
+        You have successfully accessed your account. Time to start reviewing!
+    </h3>
+    <div>
+        <a href="{{ url_for('search') }}">
+            <button class="btn btn-success">Start Reviewing!</button>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "get_access.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block form %}
+    <form style="text-align: center" action="{{ url_for('login_account') }}", method="POST">
+{% endblock %}
