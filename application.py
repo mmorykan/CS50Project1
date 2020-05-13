@@ -106,8 +106,13 @@ def search():
 @app.route('/books/<string:book_isbn>')
 def book(book_isbn):
     print('made it here')
-    book = db.execute("SELECT * FROM books WHERE isbn = :book_isbn", {'book_isbn': book_isbn}).fetchone()
-    
-    return render_template('review.html', book=book)
 
+    book_info = db.execute("SELECT * FROM books WHERE isbn = :isbn", {'isbn': book_isbn}).fetchone()
+    reviews = db.execute("SELECT username, review FROM books "
+                           "INNER JOIN reviews ON reviews.book_id = books.id "
+                           "INNER JOIN users ON reviews.user_id = users.id WHERE isbn = :isbn", {'isbn': book_isbn}).fetchall()
+    
+    print(book_info)
+    print(reviews)
+    return render_template('review.html', book=book_info, reviews=reviews)
 
