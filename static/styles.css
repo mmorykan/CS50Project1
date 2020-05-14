@@ -4,6 +4,26 @@
   font-weight: bold;
 }
 
+#logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #dc3545;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: sans-serif;
+}
+
+#logout:hover {
+  background-color: #920e1b;
+}
+
+#logout:active {
+  background-color: #920e1b;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 #login {
   width: 40%;
   margin-left: auto;
@@ -50,6 +70,10 @@ h1, h3 {
   border-radius: 10px;
   box-shadow: 5px 5px 5px gray;
   width: 250px;
+}
+
+#pressed button:active {
+  color: gray;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body %}
+{% if user_exists %}
+    <div class="alert alert-info" role="alert">
+        You have successfully logged out!
+    </div>
+{% endif %}
 <body class="background">
     <div id="front">
         <h3>About</h3>

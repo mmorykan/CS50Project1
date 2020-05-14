@@ -6,8 +6,11 @@
         <title>Book Reviews</title>
     </head>
     <body>
-        <h1 class="heading">{% block heading %}{% endblock %}</h1>
-
+        <div>
+            <h1 class="heading">
+                {% block heading %}{% endblock %}
+            </h1>
+        </div>
         {% block body %}
         {% endblock %}
     </body>

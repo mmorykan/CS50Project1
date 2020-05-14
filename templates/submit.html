@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Thank you!
+    <a href="{{ url_for('index') }}">
+        <button id="logout">Logout</button>
+    </a>
+{% endblock %}
+
+{% block body %}
+    <h4>Thanks for the review!</h4>
+    <a href="{{ url_for('books') }}">
+        <button class="btn btn-success">Start Reviewing!</button>
+    </a>
+{% endblock %}

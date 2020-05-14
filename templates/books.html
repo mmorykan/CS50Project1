@@ -2,6 +2,9 @@
 
 {% block heading %}
     Search for your favorite books!
+    <a href="{{ url_for('index') }}">
+        <button id="logout">Logout</button>
+    </a>
 {% endblock %}
 
 {% block body %}
@@ -28,4 +31,5 @@
         </li>
     {% endfor %}
 </ul>
+
 {% endblock %}
