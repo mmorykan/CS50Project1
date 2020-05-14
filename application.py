@@ -65,7 +65,9 @@ def register_account():
 
         db.execute('INSERT INTO users (username, password) VALUES (:username, :password)', {'username': username, 'password': password})
         db.commit()
-        return render_template('success.html')
+        user_id = db.execute("SELECT id FROM users WHERE username = :username", {'username': username}).fetchone()
+        session['user_id'] = user_id[0]
+        return render_template('success.html', username=username)
 
     else:
         return render_template('error_login.html', message='Enter a username and password.')

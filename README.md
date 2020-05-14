@@ -24,3 +24,6 @@ I used 4 tables for this project, 1 for users, 1 for books and book information,
 
 
 One thing to note is that in order for the existing code that I downloaded to work, I had to install werkzeug 0.16.0.
+
+
+My video can be viewed at https://youtu.be/AjzI9NoTz4g
