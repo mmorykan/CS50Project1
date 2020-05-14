@@ -18,6 +18,8 @@ The get_access.html page is the parent html file for login.html and register.htm
 
 The results.html page lists links to the books that were related to the search information provided by the user and the submit.html page is the success page for successfully posting a review and/or rating with a button taking the user back to the books page.
 
+I have 4 jpg files in the static folder along with my scss and css file.
+
 I used 4 tables for this project, 1 for users, 1 for books and book information, 1 for book reviews, and 1 for the 
 
 
